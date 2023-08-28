@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/*---------------------------------------------------------------------------*\
+ * IMPORTS                                                                   *
+\*---------------------------------------------------------------------------*/
+
+@import '../partials/_variables.scss';
+
+/*---------------------------------------------------------------------------*\
+ * TYPOGRAPHY                                                                *
+\*---------------------------------------------------------------------------*/
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  font-style: normal;
+  font-weight: 400; /* Regular */
+  font-display: fallback;
+  src: url('../../assets/fonts/Montserrat-Regular.ttf') format('ttf');
+}
+
+body,
+input,
+textarea {
+  font-family: 'Montserrat-Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.015em;
+  color: $txt-clr-primary;
+}

@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+/*---------------------------------------------------------------------------*\
+ * LICENSE                                                                   *
+ * Project Name: Pepita UI Build                                             *
+ * Author: András Rajkai                                                     *
+ * Author URI: https://www.linkedin.com/in/andrasrajkai                      *
+ * Description: Trial task for junior web designer / site builder job.       *
+ * Version: 2023.08.28.                                                      *
+ * License: none                                                             * 
+\*---------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------*\
+ * IMPORTS                                                                   *
+\*---------------------------------------------------------------------------*/
+
+@import '../partials/_reset.scss';
+@import '../partials/_typography.scss';
+@import '../partials/_variables.scss';
+@import '../partials/_mixins.scss';
+
+/*---------------------------------------------------------------------------*\
+ * GENERAL CSS RULES                                                         *
+\*---------------------------------------------------------------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+
+  body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    display: grid;
+    grid-template-rows: 60px auto;
+    grid-template-areas:
+      'header'
+      'main';
+  }
+}
+
+/*---------------------------------------------------------------------------*\
+ * TRANSITIONS                                                               *
+\*---------------------------------------------------------------------------*/
+
+a {
+  transition: all 0.3s ease-in-out;
+}
+
+/*---------------------------------------------------------------------------*\
+ * BASIC ELEMENTS                                                            *
+\*---------------------------------------------------------------------------*/
+
+a {
+  color: $txt-clr-primary;
+}
+
+a:hover {
+  color: $txt-clr-design;
+}

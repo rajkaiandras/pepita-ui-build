@@ -15,8 +15,8 @@
 \*---------------------------------------------------------------------------*/
 
 @import '../partials/_reset.scss';
-@import '../partials/_typography.scss';
 @import '../partials/_variables.scss';
+@import '../partials/_typography.scss';
 @import '../partials/_mixins.scss';
 
 /*---------------------------------------------------------------------------*\
@@ -46,21 +46,34 @@ html {
 }
 
 /*---------------------------------------------------------------------------*\
+ * BASIC ELEMENTS                                                            *
+\*---------------------------------------------------------------------------*/
+
+a {
+  color: map-get($txt-clr, dark);
+  text-decoration: none;
+}
+
+a:hover {
+  color: map-get($txt-clr, design);
+}
+
+/*---------------------------------------------------------------------------*\
+ * BACKDROP                                                                  *
+\*---------------------------------------------------------------------------*/
+
+.backdrop.open {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  @include fixed-position($top: 0, $right: false, $bottom: false, $left: 0);
+  z-index: z-index('backdrop');
+}
+
+/*---------------------------------------------------------------------------*\
  * TRANSITIONS                                                               *
 \*---------------------------------------------------------------------------*/
 
 a {
   transition: all 0.3s ease-in-out;
-}
-
-/*---------------------------------------------------------------------------*\
- * BASIC ELEMENTS                                                            *
-\*---------------------------------------------------------------------------*/
-
-a {
-  color: $txt-clr-primary;
-}
-
-a:hover {
-  color: $txt-clr-design;
 }

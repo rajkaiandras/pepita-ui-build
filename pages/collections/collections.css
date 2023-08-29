@@ -1,1 +1,228 @@
-/*# sourceMappingURL=collections.css.map */
+/*---------------------------------------------------------------------------*\
+ * IMPORTS                                                                   *
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+ * BROWSER VENDOR PREFIXES                                                   *
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+ * FONTS                                                                *
+\*---------------------------------------------------------------------------*/
+/* @mixin font-montserrat(
+  $size: false,
+  $weight: false,
+  $lineHeight: false,
+  $letterSpacing: false,
+  $color: false
+) {
+  font-family: 'Montserrat', sans-serif;
+  @if $size {
+    font-size: $size;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $line-height {
+    line-height: $lh;
+  }
+  @if $letter-spacing {
+    line-height: $lh;
+  }
+  @if $color {
+    color: $color;
+  }
+} */
+/*---------------------------------------------------------------------------*\
+ * MEDIA QUERIES                                                             *
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+ * ADD PSEUDO CONTENT                                                        *
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+ * POSITIONING                                                               *
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+ * TEXT FORMATTING                                                           *
+\*---------------------------------------------------------------------------*/
+/*------------------------------------*\
+        VARIABLES
+\*------------------------------------*/
+/* Text Colors */
+/* Background Colors */
+/* Input Field Background Colors */
+/* Button Background Colors */
+/* Shadows */
+/* Media Query Breakpoints */
+/* Positioning */
+/* Main Header */
+.main-header {
+  width: 100%;
+}
+.main-header .main-header-inner {
+  width: 100%;
+  max-width: 1280px;
+  padding: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-header .main-header-inner .main-header__logo {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: normal;
+}
+.main-header .main-header-inner .main-header__title {
+  color: #ff473a;
+  font-size: 18px;
+  font-weight: 600;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  margin: 0;
+}
+.main-header .main-header-inner .main-header__hamburger-menu {
+  width: 24px;
+  height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+/* Main Navigation */
+.main-navigation {
+  display: fixed;
+  width: 80vw;
+  max-width: 640px;
+  height: 100vh;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #ff473a;
+  box-shadow: 4px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: 0px;
+  right: false;
+  bottom: false;
+  left: -100%;
+  z-index: 3;
+}
+.main-navigation .main-navigation__links .main-navigation__link {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 12px 24px 12px 44px;
+  margin-bottom: 18px;
+  position: relative;
+}
+.main-navigation .main-navigation__links .main-navigation__link:hover:not(:first-of-type) {
+  transform: translateX(6px);
+  transition: all 0.15s ease-in-out;
+}
+.main-navigation .main-navigation__links .main-navigation__link a {
+  color: #ffffff;
+}
+.main-navigation .main-navigation__links .main-navigation__link--search::before {
+  content: url("../../assets/icons/icon-search.svg");
+  width: 24px;
+  height: auto;
+  position: absolute;
+  top: calc(50% - 12px);
+  right: false;
+  bottom: false;
+  left: 0;
+}
+.main-navigation .main-navigation__links .main-navigation__link--search input {
+  width: 100%;
+  max-width: 320px;
+  height: 42px;
+  padding: 10px;
+  border: 2px solid white;
+  color: #ffffff;
+  background-color: #ff473a;
+  font-size: inherit;
+  font-weight: inherit;
+}
+.main-navigation .main-navigation__links .main-navigation__link--search input::-moz-placeholder {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 22px;
+  color: #ffffff;
+}
+.main-navigation .main-navigation__links .main-navigation__link--search input::placeholder {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 22px;
+  color: #ffffff;
+}
+.main-navigation .main-navigation__links .main-navigation__link--search input:focus {
+  outline: none;
+}
+.main-navigation .main-navigation__links .main-navigation__link--exhibitions-events::before {
+  content: url("../../assets/icons/icon-exhibitions-events.svg");
+  width: 24px;
+  height: auto;
+  position: absolute;
+  top: calc(50% - 14px);
+  right: false;
+  bottom: false;
+  left: -2px;
+}
+.main-navigation .main-navigation__links .main-navigation__link--artists-artworks::before {
+  content: url("../../assets/icons/icon-artists-artworks.svg");
+  width: 24px;
+  height: auto;
+  position: absolute;
+  top: calc(50% - 12px);
+  right: false;
+  bottom: false;
+  left: -1px;
+}
+.main-navigation .main-navigation__links .main-navigation__link--collections::before {
+  content: url("../../assets/icons/icon-collections.svg");
+  width: 24px;
+  height: auto;
+  position: absolute;
+  top: calc(50% - 9.5px);
+  right: false;
+  bottom: false;
+  left: 2;
+}
+.main-navigation .main-navigation__links .main-navigation__link--plan-your-visit::before {
+  content: url("../../assets/icons/icon-plan-your-visit.svg");
+  width: 24px;
+  height: auto;
+  position: absolute;
+  top: calc(50% - 8px);
+  right: false;
+  bottom: false;
+  left: -3px;
+}
+.main-navigation .main-navigation__links .main-navigation__link--become-member::before {
+  content: url("../../assets/icons/icon-become-member.svg");
+  width: 24px;
+  height: auto;
+  position: absolute;
+  top: calc(50% - 8px);
+  right: false;
+  bottom: false;
+  left: -5px;
+}
+.main-navigation .main-navigation__links .main-navigation__link--shop::before {
+  content: url("../../assets/icons/icon-shop.svg");
+  width: 24px;
+  height: auto;
+  position: absolute;
+  top: calc(50% - 15.5px);
+  right: false;
+  bottom: false;
+  left: -2px;
+}
+.main-navigation.open {
+  position: fixed;
+  top: 0px;
+  right: false;
+  bottom: false;
+  left: 0;
+}/*# sourceMappingURL=collections.css.map */

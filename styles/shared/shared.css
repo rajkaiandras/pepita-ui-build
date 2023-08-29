@@ -149,16 +149,26 @@ table {
   border-spacing: 0;
 }
 
+/*------------------------------------*\
+        VARIABLES
+\*------------------------------------*/
+/* Text Colors */
+/* Background Colors */
+/* Input Field Background Colors */
+/* Button Background Colors */
+/* Shadows */
+/* Media Query Breakpoints */
+/* Positioning */
 /*---------------------------------------------------------------------------*\
  * IMPORTS                                                                   *
 \*---------------------------------------------------------------------------*/
 /*------------------------------------*\
         VARIABLES
 \*------------------------------------*/
-/* Texts */
-/* Backgrounds */
-/* Input Fields */
-/* Buttons */
+/* Text Colors */
+/* Background Colors */
+/* Input Field Background Colors */
+/* Button Background Colors */
 /* Shadows */
 /* Media Query Breakpoints */
 /* Positioning */
@@ -196,6 +206,9 @@ table {
  * MEDIA QUERIES                                                             *
 \*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*\
+ * ADD PSEUDO CONTENT                                                        *
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
  * POSITIONING                                                               *
 \*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*\
@@ -206,17 +219,15 @@ table {
 \*---------------------------------------------------------------------------*/
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/../../assets/fonts/Montserrat-VariableFont.ttf.eot");
-  src: url("../fonts/../../assets/fonts/Montserrat-VariableFont.ttf.eot?#iefix") format("embedded-opentype"), url("../fonts/../../assets/fonts/Montserrat-VariableFont.ttf.woff") format("woff"), url("../fonts/../../assets/fonts/Montserrat-VariableFont.ttf.ttf") format("truetype"), url("../fonts/../../assets/fonts/Montserrat-VariableFont.ttf.svg?#webfont") format("svg");
+  src: url("../../assets/fonts/Montserrat.ttf") format("truetype");
 }
 body,
 input,
 textarea {
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  color: #000000;
   /* @include font-montserrat('16px', '400', '24px', '0.015em', false); */
 }
 
@@ -229,7 +240,6 @@ h6 {
   font-family: "Montserrat";
   font-weight: 400;
   margin: 48px 0 24px;
-  color: #000000;
 }
 
 h1 + h3,
@@ -269,16 +279,6 @@ h6 {
   line-height: 24px;
 }
 
-/*------------------------------------*\
-        VARIABLES
-\*------------------------------------*/
-/* Texts */
-/* Backgrounds */
-/* Input Fields */
-/* Buttons */
-/* Shadows */
-/* Media Query Breakpoints */
-/* Positioning */
 /*---------------------------------------------------------------------------*\
  * BROWSER VENDOR PREFIXES                                                   *
 \*---------------------------------------------------------------------------*/
@@ -313,6 +313,9 @@ h6 {
  * MEDIA QUERIES                                                             *
 \*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*\
+ * ADD PSEUDO CONTENT                                                        *
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
  * POSITIONING                                                               *
 \*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*\
@@ -341,19 +344,35 @@ html body {
 }
 
 /*---------------------------------------------------------------------------*\
- * TRANSITIONS                                                               *
-\*---------------------------------------------------------------------------*/
-a {
-  transition: all 0.3s ease-in-out;
-}
-
-/*---------------------------------------------------------------------------*\
  * BASIC ELEMENTS                                                            *
 \*---------------------------------------------------------------------------*/
 a {
   color: #000000;
+  text-decoration: none;
 }
 
 a:hover {
   color: #ff473a;
+}
+
+/*---------------------------------------------------------------------------*\
+ * BACKDROP                                                                  *
+\*---------------------------------------------------------------------------*/
+.backdrop.open {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  right: false;
+  bottom: false;
+  left: 0;
+  z-index: 2;
+}
+
+/*---------------------------------------------------------------------------*\
+ * TRANSITIONS                                                               *
+\*---------------------------------------------------------------------------*/
+a {
+  transition: all 0.3s ease-in-out;
 }/*# sourceMappingURL=shared.css.map */

@@ -3,25 +3,38 @@
 /*------------------------------------*\
         VARIABLES
 \*------------------------------------*/
-/* Texts */
-$txt-clr-primary: #000000;
-$txt-clr-secondary: #d4d4d4;
-$txt-clr-design: #ff473a;
+/* Text Colors */
+$txt-clr: (
+  'dark': #000000,
+  'light': #ffffff,
+  'grayish': #d4d4d4,
+  'design': #ff473a,
+);
 
-/* Backgrounds */
-$bg-clr-primary: #ffffff;
-$bg-clr-design: #ff473a;
+/* Background Colors */
+$bg-clr: (
+  'dark': #000000,
+  'design': #ff473a,
+);
 
-/* Input Fields */
-$input-active: #ff473a;
-$input-disabled: #d4d4d4;
+/* Input Field Background Colors */
+$input-bg-clr: (
+  'default': #ff473a,
+  'disabled': #d4d4d4,
+);
 
-/* Buttons */
-$btn-bg-default: #ff473a;
-$btn-bg-disabled: #d4d4d4;
+/* Button Background Colors */
+$btn-bg-clr: (
+  'default': #ff473a,
+  'disabled': #d4d4d4,
+);
 
 /* Shadows */
-$box-shadow-default: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+$box-shadow-clr: rgba(0, 0, 0, 0.25);
+$box-shadow-type: (
+  'navigation-menu': 4px 0px 4px 0px $box-shadow-clr,
+  'btn': 0px 4px 4px 0px $box-shadow-clr,
+);
 
 /* Media Query Breakpoints */
 $breakpoints: (
@@ -33,10 +46,4 @@ $breakpoints: (
 );
 
 /* Positioning */
-$z-indexes: (
-  'outdated-browser',
-  'modal',
-  'site-header',
-  'page-wrapper',
-  'site-footer'
-);
+$z-indexes: ('navigation-menu', 'backdrop', 'header');

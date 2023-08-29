@@ -19,21 +19,18 @@
 //   src: url('../../assets/fonts/Montserrat-Regular.ttf') format('ttf');
 // }
 
-@include font-face(
-  'Montserrat',
-  '../../assets/fonts/Montserrat-VariableFont.ttf'
-);
+@include font-face('Montserrat');
 
 body,
 input,
 textarea {
   font: {
-    family: 'Montserrat';
+    family: 'Montserrat', sans-serif;
     size: 16px;
     weight: 400;
   }
   line-height: 24px;
-  color: $txt-clr-primary;
+  color: map-get($txt-clr, primary);
   /* @include font-montserrat('16px', '400', '24px', '0.015em', false); */
 }
 
@@ -48,7 +45,7 @@ h6 {
     weight: 400;
   }
   margin: 48px 0 24px;
-  color: $txt-clr-primary;
+  color: map-get($txt-clr, primary);
 }
 
 h1 + h3,

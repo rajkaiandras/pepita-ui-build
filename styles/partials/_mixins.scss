@@ -1,7 +1,131 @@
 @charset "UTF-8";
 
+/*---------------------------------------------------------------------------*\
+ * BROWSER VENDOR PREFIXES                                                   *
+\*---------------------------------------------------------------------------*/
+
+@mixin browser-prefix($prop, $value) {
+  -webkit-#{$prop}: #{$value};
+  -moz-#{$prop}: #{$value};
+  -ms-#{$prop}: #{$value};
+  -o-#{$prop}: #{$value};
+  #{$prop}: #{$value};
+}
+
+/*---------------------------------------------------------------------------*\
+ * FONTS                                                                *
+\*---------------------------------------------------------------------------*/
+
+@mixin font-face($name, $file) {
+  @font-face {
+    font-family: '#{$name}';
+    src: url('../fonts/#{$file}.eot');
+    src: url('../fonts/#{$file}.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/#{$file}.woff') format('woff'),
+      url('../fonts/#{$file}.ttf') format('truetype'),
+      url('../fonts/#{$file}.svg?#webfont') format('svg');
+  }
+}
+
+/* @mixin font-montserrat(
+  $size: false,
+  $weight: false,
+  $lineHeight: false,
+  $letterSpacing: false,
+  $color: false
+) {
+  font-family: 'Montserrat', sans-serif;
+  @if $size {
+    font-size: $size;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $line-height {
+    line-height: $lh;
+  }
+  @if $letter-spacing {
+    line-height: $lh;
+  }
+  @if $color {
+    color: $color;
+  }
+} */
+
+/*---------------------------------------------------------------------------*\
+ * MEDIA QUERIES                                                             *
+\*---------------------------------------------------------------------------*/
+
 @mixin media-min-width($width) {
   @media (min-width: $width) {
     @content;
   }
+}
+
+@mixin media-query($breakpoint) {
+  @if $breakpoint == large {
+    @media only screen and (min-width: 1366px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media only screen and (min-width: 600px) {
+      @content;
+    }
+  }
+}
+
+/*---------------------------------------------------------------------------*\
+ * POSITIONING                                                               *
+\*---------------------------------------------------------------------------*/
+
+@mixin margin-x-auto {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin flex-xy-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@function z-index($name) {
+  @if index($z-indexes, $name) {
+    @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+    @return null;
+  }
+}
+
+@mixin position-y-center {
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin absolute-position($top, $right, $bottom, $left) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+/*---------------------------------------------------------------------------*\
+ * TEXT FORMATTING                                                           *
+\*---------------------------------------------------------------------------*/
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

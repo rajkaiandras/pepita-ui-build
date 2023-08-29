@@ -3,11 +3,40 @@
 /*------------------------------------*\
         VARIABLES
 \*------------------------------------*/
-/* Text */
+/* Texts */
 $txt-clr-primary: #000000;
 $txt-clr-secondary: #d4d4d4;
 $txt-clr-design: #ff473a;
 
-/* Background */
+/* Backgrounds */
 $bg-clr-primary: #ffffff;
 $bg-clr-design: #ff473a;
+
+/* Input Fields */
+$input-active: #ff473a;
+$input-disabled: #d4d4d4;
+
+/* Buttons */
+$btn-bg-default: #ff473a;
+$btn-bg-disabled: #d4d4d4;
+
+/* Shadows */
+$box-shadow-default: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+/* Media Query Breakpoints */
+$breakpoints: (
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+  '2xl': 1536px,
+);
+
+/* Positioning */
+$z-indexes: (
+  'outdated-browser',
+  'modal',
+  'site-header',
+  'page-wrapper',
+  'site-footer'
+);

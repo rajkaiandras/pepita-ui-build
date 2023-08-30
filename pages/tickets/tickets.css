@@ -61,7 +61,7 @@
 }
 .page-content .page-tickets {
   width: 100%;
-  max-width: 1280px;
+  max-width: 640px;
   padding: 12px;
   /* transition: all 0.3s ease-in-out; */
   margin-left: auto;

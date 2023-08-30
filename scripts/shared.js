@@ -3,14 +3,15 @@ const hamburgerMenu = document.querySelector('.main-header__hamburger-menu');
 const navigationMenu = document.querySelector('.main-navigation');
 const navigationLinks = document.querySelectorAll('.main-navigation__link a');
 const backdrop = document.querySelector('.backdrop');
-const mainContent = document.querySelector('.content-inner');
+const mainContent = document.querySelector('.page-content-inner');
 
-/* Functions Declarations */
+/* Function Declarations */
 const openNavigationMenu = () => {
   navigationMenu.classList.add('open');
   backdrop.classList.add('open');
   mainContent.classList.add('shifted');
 };
+
 const closeNavigationMenu = () => {
   navigationMenu.classList.remove('open');
   backdrop.classList.remove('open');

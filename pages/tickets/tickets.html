@@ -3,7 +3,139 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tickets</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../styles/shared/shared.css" />
     <link rel="stylesheet" href="tickets.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- Main Header -->
+    <header class="main-header">
+      <div class="main-header-inner">
+        <a href="#">
+          <div class="main-header__logo">
+            THE<br />
+            ART<br />
+            MUSEUM
+          </div>
+        </a>
+        <h1 class="main-header__title">Plan Your Visit</h1>
+        <img
+          class="main-header__hamburger-menu"
+          src="../../assets/icons/icon-menu.svg"
+          alt="hamburger menu"
+        />
+      </div>
+
+      <!-- Main Navigation Menu -->
+      <nav class="main-navigation">
+        <ul class="main-navigation__links">
+          <li class="main-navigation__link main-navigation__link--search">
+            <input type="text" placeholder="Search" />
+          </li>
+          <li
+            class="main-navigation__link main-navigation__link--exhibitions-events"
+          >
+            <a href="#">Exhibitions & Events</a>
+          </li>
+          <li
+            class="main-navigation__link main-navigation__link--artists-artworks"
+          >
+            <a href="#">Artist & Artworks</a>
+          </li>
+          <li class="main-navigation__link main-navigation__link--collections">
+            <a href="../collections/collections.html">Collections</a>
+          </li>
+          <li
+            class="main-navigation__link main-navigation__link--plan-your-visit"
+          >
+            <a href="tickets.html">Plan Your Visit</a>
+          </li>
+          <li
+            class="main-navigation__link main-navigation__link--become-member"
+          >
+            <a href="#">Become a Member</a>
+          </li>
+          <li class="main-navigation__link main-navigation__link--shop">
+            <a href="#">Shop</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="page-content">
+      <!-- Page Tickets -->
+      <div class="page-content-inner page-tickets">
+        <!-- Hero Text -->
+        <section class="page-tickets__hero-text">
+          <h1 class="hero-text__title">
+            Skip the Line.<br />
+            Purchase Tickets.
+          </h1>
+          <h2 class="hero-text__subtitle">
+            All exhibitions, audio tours, and films<br />
+            included in the price of admission.
+          </h2>
+        </section>
+        <!-- Date Picker -->
+        <section class="page-tickets__date-picker">
+          <div class="date-picker__days">
+            <span class="date-picker__day">Today</span>
+            <span class="date-picker__day highlighted">Tomorrow</span>
+            <span class="date-picker__day">Other</span>
+          </div>
+          <div class="date-picker__chosen-date">
+            <div>March 22, 2016</div>
+            <div>Open 10:30am-5:30pm</div>
+          </div>
+        </section>
+        <!-- Ticket Types -->
+        <section class="page-tickets__ticket-types">
+          <div class="ticket-type">
+            <span class="ticket-type__title">Adults</span>
+            <span class="ticket-type__counter">
+              <span class="counter__decrease">-</span>
+              <span class="counter__quantity highlighted">2</span>
+              <span class="counter__increase">+</span>
+            </span>
+          </div>
+          <div class="ticket-type">
+            <span>
+              <div class="ticket-type__title">Seniors</div>
+              <div class="ticket-type__subtitle">65+ with ID</div>
+            </span>
+            <span class="ticket-type__counter">
+              <span class="counter__decrease">-</span>
+              <span class="counter__quantity">0</span>
+              <span class="counter__increase">+</span>
+            </span>
+          </div>
+          <div class="ticket-type">
+            <span>
+              <div class="ticket-type__title">Students</div>
+              <div class="ticket-type__subtitle">with ID</div>
+            </span>
+            <span class="ticket-type__counter">
+              <span class="counter__decrease">-</span>
+              <span class="counter__quantity">0</span>
+              <span class="counter__increase">+</span>
+            </span>
+          </div>
+        </section>
+        <!-- Ticket Payment Amount -->
+        <section class="page-tickets__payment">
+          <div class="payment-wrapper">
+            <span>Total</span><span class="payment__total-amount">$16</span>
+          </div>
+          <button class="btn-default">Continue to Payment</button>
+        </section>
+      </div>
+    </main>
+
+    <!-- Backdrop -->
+    <div class="backdrop"></div>
+
+    <!-- JS Scripts -->
+    <script src="../../scripts/shared.js"></script>
+  </body>
 </html>

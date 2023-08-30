@@ -7,186 +7,12 @@
 @import '../../styles/partials/_mixins.scss';
 @import '../../styles/partials/_variables.scss';
 
-/* Main Header */
-.main-header {
+/* Main Content */
+.page-content {
   width: 100%;
 
-  .main-header-inner {
-    width: 100%;
-    max-width: 1280px;
-    padding: 12px;
-    @include margin-x-auto;
-    @include flex-x-space-between;
-
-    .main-header__logo {
-      font: {
-        size: 10px;
-        weight: 700;
-      }
-      line-height: normal;
-    }
-
-    .main-header__title {
-      color: map-get($txt-clr, design);
-      font-size: 18px;
-      font-weight: 600;
-      font: {
-        size: 18px;
-        weight: 600;
-      }
-      line-height: 22px;
-      margin: 0;
-    }
-
-    .main-header__hamburger-menu {
-      width: 24px;
-      height: 24px;
-      object: {
-        fit: contain;
-        position: center;
-      }
-    }
-  }
-}
-
-/* Main Navigation */
-.main-navigation {
-  display: fixed;
-  width: 87.5vw;
-  max-width: 640px;
-  height: 100vh;
-  padding: 20px;
-  font: {
-    size: 18px;
-    weight: 500;
-  }
-  background-color: map-get($bg-clr, design);
-  box-shadow: map-get($box-shadow-type, navigation-menu);
-  /* transition: all 0.3s ease-in-out; */
-  @include fixed-position(0px, false, false, -100%);
-  z-index: z-index('navigation-menu');
-
-  &.open {
-    @include fixed-position(0px, false, false, 0);
-  }
-
-  .main-navigation__links {
-    width: fit-content;
-    @include margin-x-auto;
-
-    .main-navigation__link {
-      width: fit-content;
-      padding: 12px 24px 12px 44px;
-      margin-bottom: 12px;
-      position: relative;
-
-      &:hover:not(:first-of-type) {
-        transform: translateX(6px);
-        transition: all 0.15s ease-in-out;
-      }
-
-      a {
-        color: map-get($txt-clr, light);
-      }
-    }
-
-    .main-navigation__link--search {
-      &::before {
-        content: url('../../assets/icons/icon-search.svg');
-        width: 24px;
-        height: auto;
-        @include absolute-position(calc(50% - 12px), false, false, 0);
-      }
-
-      input {
-        width: 100%;
-        max-width: 320px;
-        height: 42px;
-        padding: 10px;
-        border: 2px solid white;
-        color: map-get($txt-clr, light);
-        background-color: map-get($input-bg-clr, default);
-        font: {
-          size: inherit;
-          weight: inherit;
-        }
-
-        &::placeholder {
-          font: {
-            size: inherit;
-            weight: inherit;
-          }
-          line-height: 22px;
-          color: map-get($txt-clr, light);
-        }
-
-        &:focus {
-          outline: none;
-        }
-      }
-    }
-
-    .main-navigation__link--exhibitions-events {
-      &::before {
-        content: url('../../assets/icons/icon-exhibitions-events.svg');
-        width: 24px;
-        height: auto;
-        @include absolute-position(calc(50% - 14px), false, false, -2px);
-      }
-    }
-
-    .main-navigation__link--artists-artworks {
-      &::before {
-        content: url('../../assets/icons/icon-artists-artworks.svg');
-        width: 24px;
-        height: auto;
-        @include absolute-position(calc(50% - 12px), false, false, -1px);
-      }
-    }
-
-    .main-navigation__link--collections {
-      &::before {
-        content: url('../../assets/icons/icon-collections.svg');
-        width: 24px;
-        height: auto;
-        @include absolute-position(calc(50% - 9.5px), false, false, 2);
-      }
-    }
-
-    .main-navigation__link--plan-your-visit {
-      &::before {
-        content: url('../../assets/icons/icon-plan-your-visit.svg');
-        width: 24px;
-        height: auto;
-        @include absolute-position(calc(50% - 8px), false, false, -3px);
-      }
-    }
-
-    .main-navigation__link--become-member {
-      &::before {
-        content: url('../../assets/icons/icon-become-member.svg');
-        width: 24px;
-        height: auto;
-        @include absolute-position(calc(50% - 8px), false, false, -5px);
-      }
-    }
-
-    .main-navigation__link--shop {
-      &::before {
-        content: url('../../assets/icons/icon-shop.svg');
-        width: 24px;
-        height: auto;
-        @include absolute-position(calc(50% - 15.5px), false, false, -2px);
-      }
-    }
-  }
-}
-
-/* Collections */
-main {
-  width: 100%;
-
-  .collection-inner {
+  /* Page Collections */
+  .page-collections {
     width: 100%;
     max-width: 1280px;
     padding: 12px;
@@ -198,8 +24,19 @@ main {
       left: 87.5vw;
     }
 
-    .collection-search-bar {
-      input {
+    /* Search Bar */
+    .page-collections__search-bar {
+      margin-bottom: 9px;
+      position: relative;
+
+      &::after {
+        content: url('../../assets/icons/icon-search-clr-design.svg');
+        width: 24px;
+        height: auto;
+        @include absolute-position(calc(50% - 22px), 10px, false, false);
+      }
+
+      .search-bar__input-field {
         width: 100%;
         height: 42px;
         padding: 10px;
@@ -225,14 +62,15 @@ main {
         }
       }
 
-      .collection-search-bar__advanced {
+      .search-bar__advanced-search {
         font-size: 12px;
         font-weight: 500;
         color: map-get($txt-clr, design);
       }
     }
 
-    .collection-list {
+    /* Collections List */
+    .page-collections-list {
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -245,6 +83,7 @@ main {
           width: 100%;
           height: 100%;
           max-height: 124px;
+          margin-bottom: 6px;
           object-fit: cover;
           object-position: top;
         }

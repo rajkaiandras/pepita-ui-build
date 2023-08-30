@@ -1,1 +1,182 @@
-/*# sourceMappingURL=tickets.css.map */
+/*---------------------------------------------------------------------------*\
+ * IMPORTS                                                                   *
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+ * BROWSER VENDOR PREFIXES                                                   *
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+ * FONTS                                                                *
+\*---------------------------------------------------------------------------*/
+/* @mixin font-montserrat(
+  $size: false,
+  $weight: false,
+  $lineHeight: false,
+  $letterSpacing: false,
+  $color: false
+) {
+  font-family: 'Montserrat', sans-serif;
+  @if $size {
+    font-size: $size;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+  @if $line-height {
+    line-height: $lh;
+  }
+  @if $letter-spacing {
+    line-height: $lh;
+  }
+  @if $color {
+    color: $color;
+  }
+} */
+/*---------------------------------------------------------------------------*\
+ * MEDIA QUERIES                                                             *
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+ * ADD PSEUDO CONTENT                                                        *
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+ * POSITIONING                                                               *
+\*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*\
+ * TEXT FORMATTING                                                           *
+\*---------------------------------------------------------------------------*/
+/*------------------------------------*\
+        VARIABLES
+\*------------------------------------*/
+/* Text Colors */
+/* Background Colors */
+/* Input Field Background Colors */
+/* Button Background Colors */
+/* Border Colors */
+/* Shadows */
+/* Media Query Breakpoints */
+/* Positioning */
+/* Main Content */
+.page-content {
+  width: 100%;
+  /* Page Tickets */
+}
+.page-content .page-tickets {
+  width: 100%;
+  max-width: 1280px;
+  padding: 12px;
+  /* transition: all 0.3s ease-in-out; */
+  margin-left: auto;
+  margin-right: auto;
+  /* Hero Text */
+  /* Date Picker */
+  /* Ticket Types */
+  /* Ticket Payment Amount */
+}
+.page-content .page-tickets.shifted {
+  position: relative;
+  left: 87.5vw;
+}
+.page-content .page-tickets .page-tickets__hero-text {
+  margin-bottom: 16px;
+}
+.page-content .page-tickets .page-tickets__hero-text .hero-text__title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+}
+.page-content .page-tickets .page-tickets__hero-text .hero-text__subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  color: #ff473a;
+  margin: 0;
+}
+.page-content .page-tickets .page-tickets__date-picker {
+  margin-bottom: 53px;
+}
+.page-content .page-tickets .page-tickets__date-picker .date-picker__days {
+  font-size: 18px;
+  font-weight: 600;
+  color: #d4d4d4;
+  padding: 0 16px 6px 16px;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #d4d4d4;
+}
+.page-content .page-tickets .page-tickets__date-picker .date-picker__days .date-picker__day.highlighted {
+  color: #000000;
+  position: relative;
+  bottom: 6px;
+}
+.page-content .page-tickets .page-tickets__date-picker .date-picker__days .date-picker__day.highlighted::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #ff473a;
+  position: absolute;
+  left: 0;
+  bottom: -14px;
+}
+.page-content .page-tickets .page-tickets__date-picker .date-picker__chosen-date {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+}
+.page-content .page-tickets .page-tickets__ticket-types {
+  margin-bottom: 70px;
+}
+.page-content .page-tickets .page-tickets__ticket-types .ticket-type {
+  padding: 0 16px 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+.page-content .page-tickets .page-tickets__ticket-types .ticket-type:not(:last-child) {
+  margin-bottom: 32px;
+}
+.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__subtitle {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  color: #d4d4d4;
+}
+.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter {
+  width: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__decrease,
+.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__increase {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #d4d4d4;
+  line-height: 15px;
+  text-align: center;
+  color: #d4d4d4;
+}
+.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__quantity {
+  color: #d4d4d4;
+}
+.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__quantity.highlighted {
+  color: #000000;
+  font-weight: 600;
+}
+.page-content .page-tickets .page-tickets__payment .payment-wrapper {
+  padding: 0 16px 0 16px;
+  margin-bottom: 32px;
+  border-top: 2px solid #ff473a;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+.page-content .page-tickets .page-tickets__payment .payment-wrapper .payment__total-amount {
+  margin-right: 18px;
+}/*# sourceMappingURL=tickets.css.map */

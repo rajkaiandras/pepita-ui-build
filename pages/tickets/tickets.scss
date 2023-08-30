@@ -1,1 +1,159 @@
 @charset "UTF-8";
+
+/*---------------------------------------------------------------------------*\
+ * IMPORTS                                                                   *
+\*---------------------------------------------------------------------------*/
+
+@import '../../styles/partials/_mixins.scss';
+@import '../../styles/partials/_variables.scss';
+
+/* Main Content */
+.page-content {
+  width: 100%;
+
+  /* Page Tickets */
+  .page-tickets {
+    width: 100%;
+    max-width: 1280px;
+    padding: 12px;
+    /* transition: all 0.3s ease-in-out; */
+    @include margin-x-auto;
+
+    &.shifted {
+      position: relative;
+      left: 87.5vw;
+    }
+
+    /* Hero Text */
+    .page-tickets__hero-text {
+      margin-bottom: 16px;
+
+      .hero-text__title {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: normal;
+        margin: 0;
+      }
+
+      .hero-text__subtitle {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: normal;
+        color: map-get($map: $txt-clr, $key: design);
+        margin: 0;
+      }
+    }
+
+    /* Date Picker */
+    .page-tickets__date-picker {
+      margin-bottom: 53px;
+
+      .date-picker__days {
+        font-size: 18px;
+        font-weight: 600;
+        color: map-get($map: $txt-clr, $key: grayish);
+        padding: 0 16px 6px 16px;
+        margin-bottom: 4px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid map-get($map: $border-clr, $key: grayish);
+
+        .date-picker__day {
+          &.highlighted {
+            color: map-get($map: $txt-clr, $key: dark);
+            position: relative;
+            bottom: 6px;
+
+            &::after {
+              content: '';
+              width: 100%;
+              height: 3px;
+              background-color: map-get($map: $bg-clr, $key: design);
+              position: absolute;
+              left: 0;
+              bottom: -14px;
+            }
+          }
+        }
+      }
+
+      .date-picker__chosen-date {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: normal;
+        text-align: center;
+      }
+    }
+
+    /* Ticket Types */
+    .page-tickets__ticket-types {
+      margin-bottom: 70px;
+
+      .ticket-type {
+        padding: 0 16px 0 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+
+        &:not(:last-child) {
+          margin-bottom: 32px;
+        }
+
+        .ticket-type__title {
+          font-size: 18px;
+          font-weight: 600;
+        }
+
+        .ticket-type__subtitle {
+          font-size: 12px;
+          font-weight: 500;
+          line-height: normal;
+          color: map-get($map: $txt-clr, $key: grayish);
+        }
+
+        .ticket-type__counter {
+          width: 64px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .counter__decrease,
+          .counter__increase {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 1px solid map-get($map: $border-clr, $key: grayish);
+            line-height: 15px;
+            text-align: center;
+            color: map-get($map: $txt-clr, $key: grayish);
+          }
+
+          .counter__quantity {
+            color: map-get($map: $txt-clr, $key: grayish);
+
+            &.highlighted {
+              color: map-get($map: $txt-clr, $key: dark);
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+
+    /* Ticket Payment Amount */
+    .page-tickets__payment {
+      .payment-wrapper {
+        padding: 0 16px 0 16px;
+        margin-bottom: 32px;
+        border-top: 2px solid map-get($map: $border-clr, $key: design);
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+
+        .payment__total-amount {
+          margin-right: 18px;
+        }
+      }
+    }
+  }
+}

@@ -37,16 +37,18 @@ html {
     height: 100%;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
+    /* Main Layout */
     display: grid;
-    grid-template-rows: 60px auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr;
     grid-template-areas:
-      'header'
-      'main';
+      'main-header'
+      'main-content';
 
     /* Main Header */
     .main-header {
       width: 100%;
-      grid-area: 'header';
+      grid-area: 'main-header';
 
       .main-header-inner {
         width: 100%;
@@ -230,7 +232,7 @@ html {
     }
 
     .page-content {
-      grid-area: 'main';
+      grid-area: 'main-content';
     }
   }
 }
@@ -240,12 +242,12 @@ html {
 \*---------------------------------------------------------------------------*/
 
 a {
-  color: map-get($txt-clr, dark);
+  color: map-get($txt-clr, design);
   text-decoration: none;
   transition: all 0.1s ease;
 
   &:hover {
-    color: map-get($txt-clr, design);
+    color: map-get($txt-clr, dark);
   }
 }
 

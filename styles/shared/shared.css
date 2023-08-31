@@ -342,15 +342,17 @@ html body {
   height: 100%;
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
+  /* Main Layout */
   display: grid;
-  grid-template-rows: 60px auto;
-  grid-template-areas: "header" "main";
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas: "main-header" "main-content";
   /* Main Header */
   /* Main Navigation */
 }
 html body .main-header {
   width: 100%;
-  grid-area: "header";
+  grid-area: "main-header";
 }
 html body .main-header .main-header-inner {
   width: 100%;
@@ -536,19 +538,19 @@ html body .main-navigation .main-navigation__links .main-navigation__link--shop:
   left: -2px;
 }
 html body .page-content {
-  grid-area: "main";
+  grid-area: "main-content";
 }
 
 /*---------------------------------------------------------------------------*\
  * BASIC ELEMENTS                                                            *
 \*---------------------------------------------------------------------------*/
 a {
-  color: #000000;
+  color: #ff473a;
   text-decoration: none;
   transition: all 0.1s ease;
 }
 a:hover {
-  color: #ff473a;
+  color: #000000;
 }
 
 .btn-default {

@@ -46,6 +46,7 @@ html {
     /* Main Header */
     .main-header {
       width: 100%;
+      grid-area: 'header';
 
       .main-header-inner {
         width: 100%;
@@ -72,6 +73,8 @@ html {
           }
           line-height: 22px;
           margin: 0;
+          position: relative;
+          left: -12px;
         }
 
         .main-header__hamburger-menu {
@@ -81,6 +84,11 @@ html {
             fit: contain;
             position: center;
           }
+          position: relative;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
@@ -88,8 +96,8 @@ html {
     /* Main Navigation */
     .main-navigation {
       display: fixed;
-      width: 87.5vw;
-      max-width: 640px;
+      width: 100%;
+      max-width: 87.5vw;
       height: 100vh;
       padding: 20px;
       font: {
@@ -98,9 +106,12 @@ html {
       }
       background-color: map-get($bg-clr, design);
       box-shadow: map-get($box-shadow-type, navigation-menu);
-      /* transition: all 0.3s ease-in-out; */
       @include fixed-position(0px, false, false, -100%);
       z-index: z-index('navigation-menu');
+
+      @media (min-width: map-get($breakpoints, lg)) {
+        max-width: 640px;
+      }
 
       &.open {
         @include fixed-position(0px, false, false, 0);
@@ -217,6 +228,10 @@ html {
         }
       }
     }
+
+    .page-content {
+      grid-area: 'main';
+    }
   }
 }
 
@@ -227,21 +242,33 @@ html {
 a {
   color: map-get($txt-clr, dark);
   text-decoration: none;
-}
+  transition: all 0.1s ease;
 
-a:hover {
-  color: map-get($txt-clr, design);
+  &:hover {
+    color: map-get($txt-clr, design);
+  }
 }
 
 .btn-default {
   display: block;
   padding: 12px 60px;
-  border: none;
+  border: 2px solid map-get($map: $border-clr, $key: design);
   font-size: 12px;
+  font-weight: 600;
   color: map-get($map: $txt-clr, $key: light);
   background-color: map-get($map: $bg-clr, $key: design);
   @include margin-x-auto;
-  box-shadow: map-get($map: $box-shadow-type, $key: btn);
+  box-shadow: map-get($map: $box-shadow-type, $key: btn-default);
+  transition: $transition-default;
+
+  &:hover {
+    color: map-get($map: $txt-clr, $key: design);
+    background-color: map-get($map: $btn-bg-clr, $key: hover);
+  }
+
+  &:active {
+    box-shadow: map-get($map: $box-shadow-type, $key: btn-active);
+  }
 }
 
 /*---------------------------------------------------------------------------*\
@@ -254,12 +281,4 @@ a:hover {
   background-color: transparent;
   @include fixed-position($top: 0, $right: false, $bottom: false, $left: 0);
   z-index: z-index('backdrop');
-}
-
-/*---------------------------------------------------------------------------*\
- * TRANSITIONS                                                               *
-\*---------------------------------------------------------------------------*/
-
-a {
-  transition: all 0.3s ease-in-out;
 }

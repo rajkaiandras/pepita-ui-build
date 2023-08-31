@@ -11,33 +11,53 @@
 .page-content {
   width: 100%;
 
+  &.shifted {
+    position: relative;
+    left: 87.5vw;
+
+    @media (min-width: map-get($breakpoints, lg)) {
+      left: 62.5vw;
+    }
+
+    @media (min-width: map-get($breakpoints, xl)) {
+      left: 50vw;
+    }
+
+    @media (min-width: map-get($breakpoints, xxl)) {
+      left: 35vw;
+    }
+  }
+
   /* Page Collections */
   .page-collections {
     width: 100%;
     max-width: 1280px;
     padding: 12px;
-    /* transition: all 0.3s ease-in-out; */
     @include margin-x-auto;
-
-    &.shifted {
-      position: relative;
-      left: 87.5vw;
-    }
 
     /* Search Bar */
     .page-collections__search-bar {
       width: 100%;
-      max-width: 480px;
+      max-width: 620px;
       margin-bottom: 9px;
       position: relative;
 
-      &::after {
-        content: url('../../assets/icons/icon-search-clr-design.svg');
+      .search-bar__search-icon {
         width: 24px;
-        height: auto;
-        @include absolute-position(calc(50% - 22px), 10px, false, false);
-      }
+        height: 24px;
+        background-image: url('../../assets/icons/icon-search-clr-design.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        cursor: pointer;
+        transition: $transition-default;
 
+        &:hover {
+          transform: rotate(-12deg);
+        }
+      }
       .search-bar__input-field {
         width: 100%;
         height: 42px;
@@ -68,6 +88,10 @@
         font-size: 12px;
         font-weight: 500;
         color: map-get($txt-clr, design);
+
+        &:hover {
+          color: map-get($map: $txt-clr, $key: grayish);
+        }
       }
     }
 
@@ -91,24 +115,38 @@
       .collection-list__item {
         display: flex;
         flex-direction: column;
-        /* align-items: center; */
-        width: 100%;
 
-        img {
+        .item__image-wrapper {
           width: 100%;
-          max-width: 320px;
-          aspect-ratio: 165/124;
-          margin-bottom: 6px;
-          object-fit: cover;
-          object-position: top;
+          height: 100%;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 165/124;
+            object-fit: cover;
+            object-position: top;
+            transition: $transition-default;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
         }
 
         figcaption {
+          margin-top: 6px;
           font-size: 12px;
           font-weight: 600;
           line-height: normal;
           color: map-get($txt-clr, design);
           text-transform: uppercase;
+          transition: $transition-default;
+
+          &:hover {
+            transform: translateX(12px);
+          }
         }
       }
     }

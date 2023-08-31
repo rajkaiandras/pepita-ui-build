@@ -157,7 +157,8 @@ table {
 /* Input Field Background Colors */
 /* Button Background Colors */
 /* Border Colors */
-/* Shadows */
+/* Box Shadows */
+/* Animations */
 /* Media Query Breakpoints */
 /* Positioning */
 /*---------------------------------------------------------------------------*\
@@ -171,7 +172,8 @@ table {
 /* Input Field Background Colors */
 /* Button Background Colors */
 /* Border Colors */
-/* Shadows */
+/* Box Shadows */
+/* Animations */
 /* Media Query Breakpoints */
 /* Positioning */
 /*---------------------------------------------------------------------------*\
@@ -348,6 +350,7 @@ html body {
 }
 html body .main-header {
   width: 100%;
+  grid-area: "header";
 }
 html body .main-header .main-header-inner {
   width: 100%;
@@ -372,6 +375,8 @@ html body .main-header .main-header-inner .main-header__title {
   font-weight: 600;
   line-height: 22px;
   margin: 0;
+  position: relative;
+  left: -12px;
 }
 html body .main-header .main-header-inner .main-header__hamburger-menu {
   width: 24px;
@@ -380,24 +385,32 @@ html body .main-header .main-header-inner .main-header__hamburger-menu {
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
+  position: relative;
+}
+html body .main-header .main-header-inner .main-header__hamburger-menu:hover {
+  cursor: pointer;
 }
 html body .main-navigation {
   display: fixed;
-  width: 87.5vw;
-  max-width: 640px;
+  width: 100%;
+  max-width: 87.5vw;
   height: 100vh;
   padding: 20px;
   font-size: 18px;
   font-weight: 500;
   background-color: #ff473a;
   box-shadow: 4px 0px 4px 0px rgba(0, 0, 0, 0.25);
-  /* transition: all 0.3s ease-in-out; */
   position: fixed;
   top: 0px;
   right: false;
   bottom: false;
   left: -100%;
   z-index: 3;
+}
+@media (min-width: 1024px) {
+  html body .main-navigation {
+    max-width: 640px;
+  }
 }
 html body .main-navigation.open {
   position: fixed;
@@ -522,6 +535,9 @@ html body .main-navigation .main-navigation__links .main-navigation__link--shop:
   bottom: false;
   left: -2px;
 }
+html body .page-content {
+  grid-area: "main";
+}
 
 /*---------------------------------------------------------------------------*\
  * BASIC ELEMENTS                                                            *
@@ -529,8 +545,8 @@ html body .main-navigation .main-navigation__links .main-navigation__link--shop:
 a {
   color: #000000;
   text-decoration: none;
+  transition: all 0.1s ease;
 }
-
 a:hover {
   color: #ff473a;
 }
@@ -538,13 +554,22 @@ a:hover {
 .btn-default {
   display: block;
   padding: 12px 60px;
-  border: none;
+  border: 2px solid #ff473a;
   font-size: 12px;
+  font-weight: 600;
   color: #ffffff;
   background-color: #ff473a;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+}
+.btn-default:hover {
+  color: #ff473a;
+  background-color: #ffffff;
+}
+.btn-default:active {
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
 }
 
 /*---------------------------------------------------------------------------*\
@@ -560,11 +585,4 @@ a:hover {
   bottom: false;
   left: 0;
   z-index: 2;
-}
-
-/*---------------------------------------------------------------------------*\
- * TRANSITIONS                                                               *
-\*---------------------------------------------------------------------------*/
-a {
-  transition: all 0.3s ease-in-out;
 }/*# sourceMappingURL=shared.css.map */

@@ -11,5 +11,65 @@
     <!-- STYLES -->
     <link rel="stylesheet" href="/styles/shared/shared.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- Main Header -->
+    <header class="main-header">
+      <div class="main-header-inner">
+        <a href="index.html">
+          <div class="main-header__logo">
+            THE<br />
+            ART<br />
+            MUSEUM
+          </div>
+        </a>
+        <h1 class="main-header__title">Home</h1>
+        <img
+          class="main-header__hamburger-menu"
+          src="../../assets/icons/icon-menu.svg"
+          alt="hamburger menu"
+        />
+      </div>
+
+      <!-- Main Navigation Menu -->
+      <nav class="main-navigation">
+        <ul class="main-navigation__links">
+          <li class="main-navigation__link main-navigation__link--search">
+            <input type="text" placeholder="Search" />
+          </li>
+          <li
+            class="main-navigation__link main-navigation__link--exhibitions-events"
+          >
+            <a href="#">Exhibitions & Events</a>
+          </li>
+          <li
+            class="main-navigation__link main-navigation__link--artists-artworks"
+          >
+            <a href="#">Artist & Artworks</a>
+          </li>
+          <li class="main-navigation__link main-navigation__link--collections">
+            <a href="../pages/collections/collections.html">Collections</a>
+          </li>
+          <li
+            class="main-navigation__link main-navigation__link--plan-your-visit"
+          >
+            <a href="../pages/tickets/tickets.html">Plan Your Visit</a>
+          </li>
+          <li
+            class="main-navigation__link main-navigation__link--become-member"
+          >
+            <a href="#">Become a Member</a>
+          </li>
+          <li class="main-navigation__link main-navigation__link--shop">
+            <a href="#">Shop</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Backdrop -->
+    <div class="backdrop"></div>
+
+    <!-- JS Scripts -->
+    <script src="../../scripts/shared.js"></script>
+  </body>
 </html>

@@ -11,18 +11,33 @@
 .page-content {
   width: 100%;
 
+  &.shifted {
+    position: relative;
+    left: 87.5vw;
+
+    @media (min-width: map-get($breakpoints, md)) {
+      left: 80vw;
+    }
+
+    @media (min-width: map-get($breakpoints, lg)) {
+      left: 45vw;
+    }
+
+    @media (min-width: map-get($breakpoints, xl)) {
+      left: 25vw;
+    }
+
+    @media (min-width: map-get($breakpoints, xxl)) {
+      left: 15vw;
+    }
+  }
+
   /* Page Tickets */
   .page-tickets {
     width: 100%;
     max-width: 640px;
     padding: 12px;
-    /* transition: all 0.3s ease-in-out; */
     @include margin-x-auto;
-
-    &.shifted {
-      position: relative;
-      left: 87.5vw;
-    }
 
     /* Hero Text */
     .page-tickets__hero-text {
@@ -50,7 +65,7 @@
 
       .date-picker__days {
         font-size: 18px;
-        font-weight: 600;
+        font-weight: 500;
         color: map-get($map: $txt-clr, $key: grayish);
         padding: 0 16px 6px 16px;
         margin-bottom: 4px;
@@ -59,7 +74,15 @@
         border-bottom: 2px solid map-get($map: $border-clr, $key: grayish);
 
         .date-picker__day {
+          cursor: pointer;
+          transition: $transition-default;
+
+          &:hover {
+            color: map-get($map: $txt-clr, $key: dark);
+          }
+
           &.highlighted {
+            font-weight: 600;
             color: map-get($map: $txt-clr, $key: dark);
             position: relative;
             bottom: 6px;
@@ -123,9 +146,19 @@
             width: 18px;
             height: 18px;
             border: 1px solid map-get($map: $border-clr, $key: grayish);
-            line-height: 15px;
+            line-height: 16px;
             text-align: center;
             color: map-get($map: $txt-clr, $key: grayish);
+            cursor: pointer;
+
+            &:hover {
+              color: map-get($map: $txt-clr, $key: dark);
+              border-color: map-get($map: $border-clr, $key: dark);
+            }
+          }
+
+          .counter__decrease {
+            line-height: 15px;
           }
 
           .counter__quantity {
@@ -146,6 +179,7 @@
         padding: 0 16px 0 16px;
         margin-bottom: 32px;
         border-top: 2px solid map-get($map: $border-clr, $key: design);
+        font-size: 18px;
         font-weight: 600;
         display: flex;
         justify-content: space-between;

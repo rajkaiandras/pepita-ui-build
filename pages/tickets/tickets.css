@@ -51,7 +51,8 @@
 /* Input Field Background Colors */
 /* Button Background Colors */
 /* Border Colors */
-/* Shadows */
+/* Box Shadows */
+/* Animations */
 /* Media Query Breakpoints */
 /* Positioning */
 /* Main Content */
@@ -59,21 +60,40 @@
   width: 100%;
   /* Page Tickets */
 }
+.page-content.shifted {
+  position: relative;
+  left: 87.5vw;
+}
+@media (min-width: 768px) {
+  .page-content.shifted {
+    left: 80vw;
+  }
+}
+@media (min-width: 1024px) {
+  .page-content.shifted {
+    left: 45vw;
+  }
+}
+@media (min-width: 1280px) {
+  .page-content.shifted {
+    left: 25vw;
+  }
+}
+@media (min-width: 1536px) {
+  .page-content.shifted {
+    left: 15vw;
+  }
+}
 .page-content .page-tickets {
   width: 100%;
   max-width: 640px;
   padding: 12px;
-  /* transition: all 0.3s ease-in-out; */
   margin-left: auto;
   margin-right: auto;
   /* Hero Text */
   /* Date Picker */
   /* Ticket Types */
   /* Ticket Payment Amount */
-}
-.page-content .page-tickets.shifted {
-  position: relative;
-  left: 87.5vw;
 }
 .page-content .page-tickets .page-tickets__hero-text {
   margin-bottom: 16px;
@@ -96,7 +116,7 @@
 }
 .page-content .page-tickets .page-tickets__date-picker .date-picker__days {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   color: #d4d4d4;
   padding: 0 16px 6px 16px;
   margin-bottom: 4px;
@@ -104,7 +124,15 @@
   justify-content: space-between;
   border-bottom: 2px solid #d4d4d4;
 }
+.page-content .page-tickets .page-tickets__date-picker .date-picker__days .date-picker__day {
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.page-content .page-tickets .page-tickets__date-picker .date-picker__days .date-picker__day:hover {
+  color: #000000;
+}
 .page-content .page-tickets .page-tickets__date-picker .date-picker__days .date-picker__day.highlighted {
+  font-weight: 600;
   color: #000000;
   position: relative;
   bottom: 6px;
@@ -158,9 +186,18 @@
   width: 18px;
   height: 18px;
   border: 1px solid #d4d4d4;
-  line-height: 15px;
+  line-height: 16px;
   text-align: center;
   color: #d4d4d4;
+  cursor: pointer;
+}
+.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__decrease:hover,
+.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__increase:hover {
+  color: #000000;
+  border-color: #000000;
+}
+.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__decrease {
+  line-height: 15px;
 }
 .page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__quantity {
   color: #d4d4d4;
@@ -173,6 +210,7 @@
   padding: 0 16px 0 16px;
   margin-bottom: 32px;
   border-top: 2px solid #ff473a;
+  font-size: 18px;
   font-weight: 600;
   display: flex;
   justify-content: space-between;

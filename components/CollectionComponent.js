@@ -1,7 +1,7 @@
 export const CollectionComponent = (src, title) => {
   return /* html */ `
-    <a href="#">
-      <figure class="collections-list__item">
+    <a class="collections-list__item" href="#">
+      <figure >
         <div class="item__image-wrapper">
           <img
             src=${src}

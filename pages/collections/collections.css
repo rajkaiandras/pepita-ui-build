@@ -131,7 +131,10 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
-.page-collections .page-collections-list .collections-list__item {
+.page-collections .page-collections-list .collections-list__item.hide {
+  display: none;
+}
+.page-collections .page-collections-list .collections-list__item figure {
   display: flex;
   flex-direction: column;
 }

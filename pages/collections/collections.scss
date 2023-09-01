@@ -114,8 +114,14 @@
     }
 
     .collections-list__item {
-      display: flex;
-      flex-direction: column;
+      &.hide {
+        display: none;
+      }
+
+      figure {
+        display: flex;
+        flex-direction: column;
+      }
 
       .item__image-wrapper {
         width: 100%;

@@ -1,18 +1,6 @@
 @charset "UTF-8";
 
 /*---------------------------------------------------------------------------*\
- * BROWSER VENDOR PREFIXES                                                   *
-\*---------------------------------------------------------------------------*/
-
-@mixin browser-prefix($prop, $value) {
-  -webkit-#{$prop}: #{$value};
-  -moz-#{$prop}: #{$value};
-  -ms-#{$prop}: #{$value};
-  -o-#{$prop}: #{$value};
-  #{$prop}: #{$value};
-}
-
-/*---------------------------------------------------------------------------*\
  * FONTS                                                                *
 \*---------------------------------------------------------------------------*/
 
@@ -23,11 +11,10 @@
   }
 }
 
-/* @mixin font-montserrat(
+@mixin font-montserrat(
   $size: false,
   $weight: false,
-  $lineHeight: false,
-  $letterSpacing: false,
+  $line-height: false,
   $color: false
 ) {
   font-family: 'Montserrat', sans-serif;
@@ -38,39 +25,10 @@
     font-weight: $weight;
   }
   @if $line-height {
-    line-height: $lh;
-  }
-  @if $letter-spacing {
-    line-height: $lh;
+    line-height: $line-height;
   }
   @if $color {
     color: $color;
-  }
-} */
-
-/*---------------------------------------------------------------------------*\
- * MEDIA QUERIES                                                             *
-\*---------------------------------------------------------------------------*/
-
-@mixin media-min-width($width) {
-  @media (min-width: $width) {
-    @content;
-  }
-}
-
-@mixin media-query($breakpoint) {
-  @if $breakpoint == large {
-    @media only screen and (min-width: 1366px) {
-      @content;
-    }
-  } @else if $breakpoint == desktop {
-    @media only screen and (min-width: 1024px) {
-      @content;
-    }
-  } @else if $breakpoint == tablet {
-    @media only screen and (min-width: 600px) {
-      @content;
-    }
   }
 }
 
@@ -78,10 +36,11 @@
  * ADD PSEUDO CONTENT                                                        *
 \*---------------------------------------------------------------------------*/
 
-@mixin pseudo($display: block, $pos: absolute, $content: '') {
+@mixin pseudo($content: '', $width: false, $height: false) {
   content: $content;
-  display: $display;
-  position: $pos;
+  width: $width;
+  height: $height;
+  @content;
 }
 
 /*---------------------------------------------------------------------------*\

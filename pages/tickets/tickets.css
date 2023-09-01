@@ -2,37 +2,7 @@
  * IMPORTS                                                                   *
 \*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*\
- * BROWSER VENDOR PREFIXES                                                   *
-\*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*\
  * FONTS                                                                *
-\*---------------------------------------------------------------------------*/
-/* @mixin font-montserrat(
-  $size: false,
-  $weight: false,
-  $lineHeight: false,
-  $letterSpacing: false,
-  $color: false
-) {
-  font-family: 'Montserrat', sans-serif;
-  @if $size {
-    font-size: $size;
-  }
-  @if $weight {
-    font-weight: $weight;
-  }
-  @if $line-height {
-    line-height: $lh;
-  }
-  @if $letter-spacing {
-    line-height: $lh;
-  }
-  @if $color {
-    color: $color;
-  }
-} */
-/*---------------------------------------------------------------------------*\
- * MEDIA QUERIES                                                             *
 \*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*\
  * ADD PSEUDO CONTENT                                                        *
@@ -55,36 +25,8 @@
 /* Animations */
 /* Media Query Breakpoints */
 /* Positioning */
-/* Main Content */
-.page-content {
-  width: 100%;
-  /* Page Tickets */
-}
-.page-content.shifted {
-  position: relative;
-  left: 87.5vw;
-}
-@media (min-width: 768px) {
-  .page-content.shifted {
-    left: 80vw;
-  }
-}
-@media (min-width: 1024px) {
-  .page-content.shifted {
-    left: 45vw;
-  }
-}
-@media (min-width: 1280px) {
-  .page-content.shifted {
-    left: 25vw;
-  }
-}
-@media (min-width: 1536px) {
-  .page-content.shifted {
-    left: 15vw;
-  }
-}
-.page-content .page-tickets {
+/* Page Tickets */
+.page-tickets {
   width: 100%;
   max-width: 640px;
   padding: 12px;
@@ -95,26 +37,53 @@
   /* Ticket Types */
   /* Ticket Payment Amount */
 }
-.page-content .page-tickets .page-tickets__hero-text {
+.page-tickets.shifted {
+  position: relative;
+  left: 87.5vw;
+}
+@media (min-width: 768px) {
+  .page-tickets.shifted {
+    left: 80vw;
+  }
+}
+@media (min-width: 1024px) {
+  .page-tickets.shifted {
+    left: 45vw;
+  }
+}
+@media (min-width: 1280px) {
+  .page-tickets.shifted {
+    left: 25vw;
+  }
+}
+@media (min-width: 1536px) {
+  .page-tickets.shifted {
+    left: 15vw;
+  }
+}
+.page-tickets .page-tickets__hero-text {
   margin-bottom: 16px;
 }
-.page-content .page-tickets .page-tickets__hero-text .hero-text__title {
+.page-tickets .page-tickets__hero-text .hero-text__title {
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
   font-weight: 600;
   line-height: normal;
   margin: 0;
 }
-.page-content .page-tickets .page-tickets__hero-text .hero-text__subtitle {
+.page-tickets .page-tickets__hero-text .hero-text__subtitle {
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 600;
   line-height: normal;
   color: #ff473a;
   margin: 0;
 }
-.page-content .page-tickets .page-tickets__date-picker {
+.page-tickets .page-tickets__date-picker {
   margin-bottom: 53px;
 }
-.page-content .page-tickets .page-tickets__date-picker .date-picker__days {
+.page-tickets .page-tickets__date-picker .date-picker__days {
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: 500;
   color: #d4d4d4;
@@ -124,20 +93,21 @@
   justify-content: space-between;
   border-bottom: 2px solid #d4d4d4;
 }
-.page-content .page-tickets .page-tickets__date-picker .date-picker__days .date-picker__day {
+.page-tickets .page-tickets__date-picker .date-picker__days .date-picker__day {
   cursor: pointer;
   transition: all 0.25s ease;
 }
-.page-content .page-tickets .page-tickets__date-picker .date-picker__days .date-picker__day:hover {
+.page-tickets .page-tickets__date-picker .date-picker__days .date-picker__day:hover {
   color: #000000;
 }
-.page-content .page-tickets .page-tickets__date-picker .date-picker__days .date-picker__day.highlighted {
+.page-tickets .page-tickets__date-picker .date-picker__days .date-picker__day.highlighted {
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   color: #000000;
   position: relative;
   bottom: 6px;
 }
-.page-content .page-tickets .page-tickets__date-picker .date-picker__days .date-picker__day.highlighted::after {
+.page-tickets .page-tickets__date-picker .date-picker__days .date-picker__day.highlighted::after {
   content: "";
   width: 100%;
   height: 3px;
@@ -146,75 +116,79 @@
   left: 0;
   bottom: -14px;
 }
-.page-content .page-tickets .page-tickets__date-picker .date-picker__chosen-date {
+.page-tickets .page-tickets__date-picker .date-picker__chosen-date {
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 600;
   line-height: normal;
   text-align: center;
 }
-.page-content .page-tickets .page-tickets__ticket-types {
+.page-tickets .page-tickets__ticket-types {
   margin-bottom: 70px;
 }
-.page-content .page-tickets .page-tickets__ticket-types .ticket-type {
+.page-tickets .page-tickets__ticket-types .ticket-type {
   padding: 0 16px 0 16px;
   display: flex;
   justify-content: space-between;
   align-items: start;
 }
-.page-content .page-tickets .page-tickets__ticket-types .ticket-type:not(:last-child) {
+.page-tickets .page-tickets__ticket-types .ticket-type:not(:last-child) {
   margin-bottom: 32px;
 }
-.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__title {
+.page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__title {
   font-size: 18px;
   font-weight: 600;
 }
-.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__subtitle {
+.page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__subtitle {
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 500;
   line-height: normal;
   color: #d4d4d4;
 }
-.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter {
+.page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter {
   width: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__decrease,
-.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__increase {
+.page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__decrease,
+.page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__increase {
   display: inline-block;
   width: 18px;
   height: 18px;
   border: 1px solid #d4d4d4;
+  font-family: "Montserrat", sans-serif;
   line-height: 16px;
-  text-align: center;
   color: #d4d4d4;
+  text-align: center;
   cursor: pointer;
 }
-.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__decrease:hover,
-.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__increase:hover {
+.page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__decrease:hover,
+.page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__increase:hover {
   color: #000000;
   border-color: #000000;
 }
-.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__decrease {
+.page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__decrease {
   line-height: 15px;
 }
-.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__quantity {
+.page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__quantity {
   color: #d4d4d4;
 }
-.page-content .page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__quantity.highlighted {
+.page-tickets .page-tickets__ticket-types .ticket-type .ticket-type__counter .counter__quantity.highlighted {
   color: #000000;
   font-weight: 600;
 }
-.page-content .page-tickets .page-tickets__payment .payment-wrapper {
+.page-tickets .page-tickets__payment .payment-wrapper {
   padding: 0 16px 0 16px;
   margin-bottom: 32px;
   border-top: 2px solid #ff473a;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: 600;
   display: flex;
   justify-content: space-between;
 }
-.page-content .page-tickets .page-tickets__payment .payment-wrapper .payment__total-amount {
+.page-tickets .page-tickets__payment .payment-wrapper .payment__total-amount {
   margin-right: 18px;
 }/*# sourceMappingURL=tickets.css.map */

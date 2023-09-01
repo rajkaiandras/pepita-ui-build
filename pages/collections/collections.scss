@@ -7,9 +7,12 @@
 @import '../../styles/partials/_mixins.scss';
 @import '../../styles/partials/_variables.scss';
 
-/* Main Content */
-.page-content {
+/* Page Collections */
+.page-collections {
   width: 100%;
+  max-width: 1280px;
+  padding: 12px;
+  @include margin-x-auto;
 
   &.shifted {
     position: relative;
@@ -28,125 +31,124 @@
     }
   }
 
-  /* Page Collections */
-  .page-collections {
+  /* Search Bar */
+  .page-collections__search-bar {
     width: 100%;
-    max-width: 1280px;
-    padding: 12px;
-    @include margin-x-auto;
+    max-width: 620px;
+    margin-bottom: 9px;
+    position: relative;
 
-    /* Search Bar */
-    .page-collections__search-bar {
-      width: 100%;
-      max-width: 620px;
-      margin-bottom: 9px;
-      position: relative;
+    .search-bar__search-icon {
+      width: 24px;
+      height: 24px;
+      background-image: url('../../assets/icons/icon-search-clr-design.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      @include absolute-position(
+        $top: 10px,
+        $right: 12px,
+        $bottom: false,
+        $left: false
+      );
+      cursor: pointer;
+      transition: $transition-default;
 
-      .search-bar__search-icon {
-        width: 24px;
-        height: 24px;
-        background-image: url('../../assets/icons/icon-search-clr-design.svg');
-        background-position: center;
-        background-repeat: no-repeat;
-        position: absolute;
-        top: 10px;
-        right: 12px;
-        cursor: pointer;
-        transition: $transition-default;
-
-        &:hover {
-          transform: rotate(-12deg);
-        }
-      }
-      .search-bar__input-field {
-        width: 100%;
-        height: 42px;
-        padding: 10px;
-        border: 2px solid map-get($border-clr, design);
-        color: map-get($txt-clr, design);
-        background-color: map-get($input-bg-clr, light);
-        font: {
-          size: 18px;
-          weight: 500;
-        }
-
-        &::placeholder {
-          font: {
-            size: inherit;
-            weight: inherit;
-          }
-          line-height: 22px;
-          color: map-get($txt-clr, design);
-        }
-
-        &:focus {
-          outline: none;
-        }
-      }
-
-      .search-bar__advanced-search {
-        font-size: 12px;
-        font-weight: 500;
-        color: map-get($txt-clr, design);
-
-        &:hover {
-          color: map-get($map: $txt-clr, $key: grayish);
-        }
+      &:hover {
+        transform: rotate(-12deg);
       }
     }
 
-    /* Collections List */
-    .page-collections-list {
+    .search-bar__input-field {
       width: 100%;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto;
-      grid-column-gap: 18px;
-      grid-row-gap: 12px;
+      height: 42px;
+      padding: 10px;
+      border: 2px solid map-get($map: $border-clr, $key: design);
+      background-color: map-get($map: $input-bg-clr, $key: light);
+      @include font-montserrat(
+        $size: 18px,
+        $weight: 500,
+        $line-height: 22px,
+        $color: map-get($map: $txt-clr, $key: design)
+      );
 
-      @media (min-width: 640px) {
-        grid-template-columns: repeat(3, 1fr);
+      &::placeholder {
+        @include font-montserrat(
+          $size: 18px,
+          $weight: 500,
+          $line-height: 22px,
+          $color: map-get($map: $txt-clr, $key: design)
+        );
       }
 
-      @media (min-width: 1024px) {
-        grid-template-columns: repeat(4, 1fr);
+      &:focus {
+        outline: none;
       }
+    }
 
-      .collection-list__item {
-        display: flex;
-        flex-direction: column;
+    .search-bar__advanced-search {
+      font-size: 12px;
+      font-weight: 500;
+      color: map-get($txt-clr, design);
 
-        .item__image-wrapper {
+      &:hover {
+        color: map-get($map: $txt-clr, $key: grayish);
+      }
+    }
+  }
+
+  /* Collections List */
+  .page-collections-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 18px;
+    grid-row-gap: 12px;
+
+    @media (min-width: map-get($breakpoints, sm)) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: map-get($breakpoints, lg)) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .collections-list__item {
+      display: flex;
+      flex-direction: column;
+
+      .item__image-wrapper {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        img {
           width: 100%;
-          height: 100%;
-          overflow: hidden;
-
-          img {
-            width: 100%;
-            max-width: 320px;
-            aspect-ratio: 165/124;
-            object-fit: cover;
-            object-position: top;
-            transition: $transition-default;
-
-            &:hover {
-              transform: scale(1.1);
-            }
-          }
-        }
-
-        figcaption {
-          margin-top: 6px;
-          font-size: 12px;
-          font-weight: 600;
-          line-height: normal;
-          color: map-get($txt-clr, design);
-          text-transform: uppercase;
+          max-width: 320px;
+          aspect-ratio: 165/124;
+          object-fit: cover;
+          object-position: top;
           transition: $transition-default;
 
           &:hover {
-            transform: translateX(12px);
+            transform: scale(1.1);
           }
+        }
+      }
+
+      figcaption {
+        margin-top: 6px;
+        @include font-montserrat(
+          $size: 12px,
+          $weight: 600,
+          $line-height: normal,
+          $color: map-get($map: $txt-clr, $key: design)
+        );
+        text-transform: uppercase;
+        transition: $transition-default;
+
+        &:hover {
+          transform: translateX(12px);
         }
       }
     }

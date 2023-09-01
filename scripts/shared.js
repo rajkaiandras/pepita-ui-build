@@ -3,7 +3,7 @@ const hamburgerMenu = document.querySelector('.main-header__hamburger-menu');
 const navigationMenu = document.querySelector('.main-navigation');
 const navigationLinks = document.querySelectorAll('.main-navigation__link a');
 const backdrop = document.querySelector('.backdrop');
-const mainContent = document.querySelector('.page-content');
+const mainContent = document.querySelector('.page-content-inner');
 
 /* Function Declarations */
 const openNavigationMenu = () => {

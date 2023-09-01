@@ -2,37 +2,7 @@
  * IMPORTS                                                                   *
 \*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*\
- * BROWSER VENDOR PREFIXES                                                   *
-\*---------------------------------------------------------------------------*/
-/*---------------------------------------------------------------------------*\
  * FONTS                                                                *
-\*---------------------------------------------------------------------------*/
-/* @mixin font-montserrat(
-  $size: false,
-  $weight: false,
-  $lineHeight: false,
-  $letterSpacing: false,
-  $color: false
-) {
-  font-family: 'Montserrat', sans-serif;
-  @if $size {
-    font-size: $size;
-  }
-  @if $weight {
-    font-weight: $weight;
-  }
-  @if $line-height {
-    line-height: $lh;
-  }
-  @if $letter-spacing {
-    line-height: $lh;
-  }
-  @if $color {
-    color: $color;
-  }
-} */
-/*---------------------------------------------------------------------------*\
- * MEDIA QUERIES                                                             *
 \*---------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------*\
  * ADD PSEUDO CONTENT                                                        *
@@ -55,31 +25,8 @@
 /* Animations */
 /* Media Query Breakpoints */
 /* Positioning */
-/* Main Content */
-.page-content {
-  width: 100%;
-  /* Page Collections */
-}
-.page-content.shifted {
-  position: relative;
-  left: 87.5vw;
-}
-@media (min-width: 1024px) {
-  .page-content.shifted {
-    left: 62.5vw;
-  }
-}
-@media (min-width: 1280px) {
-  .page-content.shifted {
-    left: 50vw;
-  }
-}
-@media (min-width: 1536px) {
-  .page-content.shifted {
-    left: 35vw;
-  }
-}
-.page-content .page-collections {
+/* Page Collections */
+.page-collections {
   width: 100%;
   max-width: 1280px;
   padding: 12px;
@@ -88,13 +35,32 @@
   /* Search Bar */
   /* Collections List */
 }
-.page-content .page-collections .page-collections__search-bar {
+.page-collections.shifted {
+  position: relative;
+  left: 87.5vw;
+}
+@media (min-width: 1024px) {
+  .page-collections.shifted {
+    left: 62.5vw;
+  }
+}
+@media (min-width: 1280px) {
+  .page-collections.shifted {
+    left: 50vw;
+  }
+}
+@media (min-width: 1536px) {
+  .page-collections.shifted {
+    left: 35vw;
+  }
+}
+.page-collections .page-collections__search-bar {
   width: 100%;
   max-width: 620px;
   margin-bottom: 9px;
   position: relative;
 }
-.page-content .page-collections .page-collections__search-bar .search-bar__search-icon {
+.page-collections .page-collections__search-bar .search-bar__search-icon {
   width: 24px;
   height: 24px;
   background-image: url("../../assets/icons/icon-search-clr-design.svg");
@@ -103,45 +69,51 @@
   position: absolute;
   top: 10px;
   right: 12px;
+  bottom: false;
+  left: false;
   cursor: pointer;
   transition: all 0.25s ease;
 }
-.page-content .page-collections .page-collections__search-bar .search-bar__search-icon:hover {
+.page-collections .page-collections__search-bar .search-bar__search-icon:hover {
   transform: rotate(-12deg);
 }
-.page-content .page-collections .page-collections__search-bar .search-bar__input-field {
+.page-collections .page-collections__search-bar .search-bar__input-field {
   width: 100%;
   height: 42px;
   padding: 10px;
   border: 2px solid #ff473a;
-  color: #ff473a;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: 500;
-}
-.page-content .page-collections .page-collections__search-bar .search-bar__input-field::-moz-placeholder {
-  font-size: inherit;
-  font-weight: inherit;
   line-height: 22px;
   color: #ff473a;
 }
-.page-content .page-collections .page-collections__search-bar .search-bar__input-field::placeholder {
-  font-size: inherit;
-  font-weight: inherit;
+.page-collections .page-collections__search-bar .search-bar__input-field::-moz-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
   line-height: 22px;
   color: #ff473a;
 }
-.page-content .page-collections .page-collections__search-bar .search-bar__input-field:focus {
+.page-collections .page-collections__search-bar .search-bar__input-field::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #ff473a;
+}
+.page-collections .page-collections__search-bar .search-bar__input-field:focus {
   outline: none;
 }
-.page-content .page-collections .page-collections__search-bar .search-bar__advanced-search {
+.page-collections .page-collections__search-bar .search-bar__advanced-search {
   font-size: 12px;
   font-weight: 500;
   color: #ff473a;
 }
-.page-content .page-collections .page-collections__search-bar .search-bar__advanced-search:hover {
+.page-collections .page-collections__search-bar .search-bar__advanced-search:hover {
   color: #d4d4d4;
 }
-.page-content .page-collections .page-collections-list {
+.page-collections .page-collections-list {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -150,25 +122,25 @@
   grid-row-gap: 12px;
 }
 @media (min-width: 640px) {
-  .page-content .page-collections .page-collections-list {
+  .page-collections .page-collections-list {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 1024px) {
-  .page-content .page-collections .page-collections-list {
+  .page-collections .page-collections-list {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-.page-content .page-collections .page-collections-list .collection-list__item {
+.page-collections .page-collections-list .collections-list__item {
   display: flex;
   flex-direction: column;
 }
-.page-content .page-collections .page-collections-list .collection-list__item .item__image-wrapper {
+.page-collections .page-collections-list .collections-list__item .item__image-wrapper {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.page-content .page-collections .page-collections-list .collection-list__item .item__image-wrapper img {
+.page-collections .page-collections-list .collections-list__item .item__image-wrapper img {
   width: 100%;
   max-width: 320px;
   aspect-ratio: 165/124;
@@ -178,11 +150,12 @@
      object-position: top;
   transition: all 0.25s ease;
 }
-.page-content .page-collections .page-collections-list .collection-list__item .item__image-wrapper img:hover {
+.page-collections .page-collections-list .collections-list__item .item__image-wrapper img:hover {
   transform: scale(1.1);
 }
-.page-content .page-collections .page-collections-list .collection-list__item figcaption {
+.page-collections .page-collections-list .collections-list__item figcaption {
   margin-top: 6px;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 600;
   line-height: normal;
@@ -190,6 +163,6 @@
   text-transform: uppercase;
   transition: all 0.25s ease;
 }
-.page-content .page-collections .page-collections-list .collection-list__item figcaption:hover {
+.page-collections .page-collections-list .collections-list__item figcaption:hover {
   transform: translateX(12px);
 }/*# sourceMappingURL=collections.css.map */

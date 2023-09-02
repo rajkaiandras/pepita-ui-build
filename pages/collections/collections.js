@@ -56,7 +56,7 @@ const handleSearchBarInput = (e) => {
         'beforeend',
         NoMatchesComponent(searchBarInputText, 'Collections')
       );
-    } else if (hiddenListLength < originalListLength) {
+    } else if (noMatchesComponent && hiddenListLength < originalListLength) {
       noMatchesComponent.remove();
     }
   };

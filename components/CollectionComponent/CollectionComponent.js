@@ -1,6 +1,6 @@
 export const CollectionComponent = (src, title) => {
   return /* html */ `
-    <a class="collections-list__item" href="#">
+    <a class="CollectionComponent" href="#">
       <figure >
         <div class="item__image-wrapper">
           <img

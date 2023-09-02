@@ -25,6 +25,50 @@
 /* Animations */
 /* Media Query Breakpoints */
 /* Positioning */
+/* Components */
+.CollectionComponent.hide {
+  display: none;
+}
+.CollectionComponent figure {
+  display: flex;
+  flex-direction: column;
+}
+.CollectionComponent .item__image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.CollectionComponent .item__image-wrapper img {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 165/124;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  transition: all 0.25s ease;
+}
+.CollectionComponent .item__image-wrapper img:hover {
+  transform: scale(1.1);
+}
+.CollectionComponent figcaption {
+  margin-top: 6px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  color: #ff473a;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+}
+.CollectionComponent figcaption:hover {
+  transform: translateX(12px);
+}
+
+.NoMatchesComponent .no-matches__warning {
+  color: #d4d4d4;
+}
+
 /* Page Collections */
 .page-collections {
   width: 100%;
@@ -130,45 +174,4 @@
   .page-collections .page-collections-list {
     grid-template-columns: repeat(4, 1fr);
   }
-}
-.page-collections .page-collections-list .collections-list__item.hide {
-  display: none;
-}
-.page-collections .page-collections-list .collections-list__item figure {
-  display: flex;
-  flex-direction: column;
-}
-.page-collections .page-collections-list .collections-list__item .item__image-wrapper {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.page-collections .page-collections-list .collections-list__item .item__image-wrapper img {
-  width: 100%;
-  max-width: 320px;
-  aspect-ratio: 165/124;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: top;
-     object-position: top;
-  transition: all 0.25s ease;
-}
-.page-collections .page-collections-list .collections-list__item .item__image-wrapper img:hover {
-  transform: scale(1.1);
-}
-.page-collections .page-collections-list .collections-list__item figcaption {
-  margin-top: 6px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: normal;
-  color: #ff473a;
-  text-transform: uppercase;
-  transition: all 0.25s ease;
-}
-.page-collections .page-collections-list .collections-list__item figcaption:hover {
-  transform: translateX(12px);
-}
-.page-collections .page-collections-list .no-matches {
-  color: #d4d4d4;
 }/*# sourceMappingURL=collections.css.map */

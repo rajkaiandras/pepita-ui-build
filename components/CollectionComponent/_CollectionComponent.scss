@@ -1,0 +1,45 @@
+.CollectionComponent {
+  &.hide {
+    display: none;
+  }
+
+  figure {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item__image-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 165/124;
+      object-fit: cover;
+      object-position: top;
+      transition: $transition-default;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  figcaption {
+    margin-top: 6px;
+    @include font-montserrat(
+      $size: 12px,
+      $weight: 600,
+      $line-height: normal,
+      $color: map-get($map: $txt-clr, $key: design)
+    );
+    text-transform: uppercase;
+    transition: $transition-default;
+
+    &:hover {
+      transform: translateX(12px);
+    }
+  }
+}

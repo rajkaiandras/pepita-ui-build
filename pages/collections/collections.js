@@ -2,25 +2,25 @@
 import { collectionsDB } from '../../database/collectionsDB.js';
 
 /* Components */
-import { CollectionComponent } from '../../components/CollectionComponent.js';
-import { EmptyList } from '../../components/EmptyList.js';
+import { CollectionComponent } from '../../components/CollectionComponent/CollectionComponent.js';
+import { NoMatchesComponent } from '../../components/NoMatchesComponent/NoMatchesComponents.js';
 
 /* DOM Reference */
 const collectionsList = document.querySelector('.page-collections-list');
 
 /* Insert Collection Components into DOM Tree */
 collectionsDB.map((collection) => {
+  const { src, title } = collection;
+
   collectionsList.insertAdjacentHTML(
     'beforeend',
-    CollectionComponent(collection.source, collection.title)
+    CollectionComponent(src, title)
   );
 });
 
 /* DOM References */
 const searchBarInputField = document.querySelector('.search-bar__input-field');
-const collectionListItems = document.querySelectorAll(
-  '.collections-list__item'
-);
+const collectionListItems = document.querySelectorAll('.CollectionComponent');
 
 /* Collections List Length */
 const originalListLength = collectionListItems.length;
@@ -41,8 +41,8 @@ const handleSearchBarInput = (e) => {
   });
 
   /* Is Collection List Empty */
-  const isCollectionListEmpty = () => {
-    const emptyList = document.querySelector('.no-matches');
+  const isAllCollectionComponentHidden = () => {
+    const noMatchesComponent = document.querySelector('.NoMatchesComponent');
     let hiddenListLength = 0;
 
     collectionListItems.forEach((item) => {
@@ -51,17 +51,17 @@ const handleSearchBarInput = (e) => {
       }
     });
 
-    if (hiddenListLength === originalListLength && !emptyList) {
+    if (hiddenListLength === originalListLength && !noMatchesComponent) {
       collectionsList.insertAdjacentHTML(
         'beforeend',
-        EmptyList(searchBarInputText, 'Collections')
+        NoMatchesComponent(searchBarInputText, 'Collections')
       );
     } else if (hiddenListLength < originalListLength) {
-      emptyList.remove();
+      noMatchesComponent.remove();
     }
   };
 
-  isCollectionListEmpty();
+  isAllCollectionComponentHidden();
 };
 
 /* Input Field Keyup Trigger Filtering Components */

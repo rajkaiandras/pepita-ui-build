@@ -1,0 +1,5 @@
+.NoMatchesComponent {
+  .no-matches__warning {
+    color: map-get($map: $txt-clr, $key: grayish);
+  }
+}

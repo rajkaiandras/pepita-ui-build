@@ -158,5 +158,9 @@
         }
       }
     }
+
+    .no-matches {
+      color: map-get($map: $txt-clr, $key: grayish);
+    }
   }
 }

@@ -21,6 +21,7 @@ collectionsDB.map((collection) => {
 /* DOM References */
 const searchBarInputField = document.querySelector('.search-bar__input-field');
 const collectionListItems = document.querySelectorAll('.CollectionComponent');
+const pageCollections = document.querySelector('.page-collections');
 
 /* Collections List Length */
 const originalListLength = collectionListItems.length;
@@ -52,7 +53,7 @@ const handleSearchBarInput = (e) => {
     });
 
     if (hiddenListLength === originalListLength && !noMatchesComponent) {
-      collectionsList.insertAdjacentHTML(
+      pageCollections.insertAdjacentHTML(
         'beforeend',
         NoMatchesComponent(searchBarInputText, 'Collections')
       );

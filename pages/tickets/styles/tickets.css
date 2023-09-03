@@ -158,6 +158,7 @@
   width: 18px;
   height: 18px;
   border: 1px solid #d4d4d4;
+  background-color: #ffffff;
   font-family: "Montserrat", sans-serif;
   line-height: 16px;
   color: #d4d4d4;
@@ -191,4 +192,13 @@
 }
 .page-tickets .page-tickets__payment .payment-wrapper .payment__total-amount {
   margin-right: 18px;
+  color: #d4d4d4;
+}
+.page-tickets .page-tickets__payment .payment-wrapper .payment__total-amount.highlighted {
+  color: #000000;
+}
+.page-tickets .page-tickets__payment .payment-wrapper .payment__total-amount::before {
+  content: "$";
+  width: false;
+  height: false;
 }/*# sourceMappingURL=tickets.css.map */

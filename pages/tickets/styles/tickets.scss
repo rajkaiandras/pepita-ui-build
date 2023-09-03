@@ -4,8 +4,8 @@
  * IMPORTS                                                                   *
 \*---------------------------------------------------------------------------*/
 
-@import '../../styles/partials/_mixins.scss';
-@import '../../styles/partials/_variables.scss';
+@import '../../../styles/partials/_mixins.scss';
+@import '../../../styles/partials/_variables.scss';
 
 /* Page Tickets */
 .page-tickets {
@@ -159,6 +159,7 @@
           width: 18px;
           height: 18px;
           border: 1px solid map-get($map: $border-clr, $key: grayish);
+          background-color: map-get($map: $bg-clr, $key: light);
           @include font-montserrat(
             $size: false,
             $weight: false,
@@ -207,6 +208,13 @@
 
       .payment__total-amount {
         margin-right: 18px;
+        color: map-get($map: $txt-clr, $key: grayish);
+        &.highlighted {
+          color: map-get($map: $txt-clr, $key: dark);
+        }
+        &::before {
+          @include pseudo('$', false, false);
+        }
       }
     }
   }

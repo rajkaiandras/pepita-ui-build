@@ -4,12 +4,12 @@
  * IMPORTS                                                                   *
 \*---------------------------------------------------------------------------*/
 
-@import '../../styles/partials/_mixins.scss';
-@import '../../styles/partials/_variables.scss';
+@import '../../../styles/partials/_mixins.scss';
+@import '../../../styles/partials/_variables.scss';
 
 /* Components */
-@import '../../components//CollectionComponent/_CollectionComponent.scss';
-@import '../../components/NoMatchesComponent/_NoMatchesComponent.scss';
+@import '../../../components//CollectionComponent/_CollectionComponent.scss';
+@import '../../../components/NoMatchesComponent/_NoMatchesComponent.scss';
 
 /* Page Collections */
 .page-collections {

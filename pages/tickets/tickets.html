@@ -99,9 +99,14 @@
           <div class="ticket-type">
             <span class="ticket-type__title">Adults</span>
             <span class="ticket-type__counter">
-              <span class="counter__decrease">-</span>
-              <span class="counter__quantity highlighted">2</span>
-              <span class="counter__increase">+</span>
+              <button class="counter__decrease counter__decrease--adult">
+                -
+              </button>
+              <span
+                class="counter__quantity counter__quantity--adult highlighted"
+                >2</span
+              >
+              <span class="counter__increase counter__increase--adult">+</span>
             </span>
           </div>
           <div class="ticket-type">
@@ -110,9 +115,16 @@
               <div class="ticket-type__subtitle">65+ with ID</div>
             </span>
             <span class="ticket-type__counter">
-              <span class="counter__decrease">-</span>
-              <span class="counter__quantity">0</span>
-              <span class="counter__increase">+</span>
+              <button
+                disabled
+                class="counter__decrease counter__decrease--senior"
+              >
+                -
+              </button>
+              <span class="counter__quantity counter__quantity--senior">0</span>
+              <button class="counter__increase counter__increase--senior">
+                +
+              </button>
             </span>
           </div>
           <div class="ticket-type">
@@ -121,16 +133,26 @@
               <div class="ticket-type__subtitle">with ID</div>
             </span>
             <span class="ticket-type__counter">
-              <span class="counter__decrease">-</span>
-              <span class="counter__quantity">0</span>
-              <span class="counter__increase">+</span>
+              <button
+                disabled
+                class="counter__decrease counter__decrease--student"
+              >
+                -
+              </button>
+              <span class="counter__quantity counter__quantity--student"
+                >0</span
+              >
+              <button class="counter__increase counter__increase--student">
+                +
+              </button>
             </span>
           </div>
         </section>
         <!-- Ticket Payment Amount -->
         <section class="page-tickets__payment">
           <div class="payment-wrapper">
-            <span>Total</span><span class="payment__total-amount">$16</span>
+            <span>Total</span
+            ><span class="payment__total-amount highlighted">16</span>
           </div>
           <button class="btn-default">Continue to Payment</button>
         </section>
@@ -142,5 +164,6 @@
 
     <!-- JS Scripts -->
     <script src="../../scripts/shared.js"></script>
+    <script src="./scripts/tickets.js"></script>
   </body>
 </html>

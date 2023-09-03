@@ -1,9 +1,9 @@
 /* Database */
-import { collectionsDB } from '../../database/collectionsDB.js';
+import { collectionsDB } from '../../../database/collectionsDB.js';
 
 /* Components */
-import { CollectionComponent } from '../../components/CollectionComponent/CollectionComponent.js';
-import { NoMatchesComponent } from '../../components/NoMatchesComponent/NoMatchesComponents.js';
+import { CollectionComponent } from '../../../components/CollectionComponent/CollectionComponent.js';
+import { NoMatchesComponent } from '../../../components/NoMatchesComponent/NoMatchesComponents.js';
 
 /* DOM Reference */
 const collectionsList = document.querySelector('.page-collections-list');

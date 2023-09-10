@@ -1,9 +1,61 @@
 /* Database */
-import { collectionsDB } from '../../../database/collectionsDB.js';
+/* import { collectionsDB } from '../../../database/collectionsDB.js'; */
+
+const collectionsDB = [
+  {
+    title: 'Decorative Arts & Crafts',
+    src: '../../assets/images/collections/decorative-arts-crafts.jfif',
+  },
+  {
+    title: 'American Impressionism',
+    src: '../../assets/images/collections/american-impressionism.jfif',
+  },
+  {
+    title: 'De Stijl',
+    src: '../../assets/images/collections/de-stijl.jfif',
+  },
+  {
+    title: 'Cubism',
+    src: '../../assets/images/collections/cubism.jfif',
+  },
+  {
+    title: 'American',
+    src: '../../assets/images/collections/american.jfif',
+  },
+  {
+    title: 'Greek Antiquities',
+    src: '../../assets/images/collections/greek-antiquities.jfif',
+  },
+];
 
 /* Components */
-import { CollectionComponent } from '../../../components/CollectionComponent/CollectionComponent.js';
-import { NoMatchesComponent } from '../../../components/NoMatchesComponent/NoMatchesComponents.js';
+/* import { CollectionComponent } from '../../../components/CollectionComponent/CollectionComponent.js'; */
+/* import { NoMatchesComponent } from '../../../components/NoMatchesComponent/NoMatchesComponents.js'; */
+
+const CollectionComponent = (src, title) => {
+  return /* html */ `
+    <a class="CollectionComponent" href="#">
+      <figure >
+        <div class="item__image-wrapper">
+          <img
+            src=${src}
+            alt=${title}
+            style="width: 100%"
+          />
+        </div>
+        <figcaption>${title}</figcaption>
+      </figure>
+    </a>
+  `;
+};
+
+const NoMatchesComponent = (keyword, list) => {
+  return /* html */ `
+  <section class="NoMatchesComponent">
+    <div class="no-matches__warning">No matches for '${keyword}...'<br />Try another keyword to search in ${list}.</div>
+  </section>
+  `;
+};
 
 /* DOM Reference */
 const collectionsList = document.querySelector('.page-collections-list');
